@@ -9,7 +9,7 @@ await page.getByLabel('Consent', { exact: true }).click();
 
 //Xpath Locators
 await page.locator('xpath=//select').click();
-//await page.locator('xpath=//button[@data-testid="buttonElement"]').click();
+await page.locator('xpath=//button[@data-testid="buttonElement"]').click();
 //await page.locator('xpath=//*[@data-testid="buttonElement"]').click();
 //await page.locator('xpath=//span[text()="Submit"]').click();
 //await page.locator('xpath=//*[text()="Submit"]').click();
