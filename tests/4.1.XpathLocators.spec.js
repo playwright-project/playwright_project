@@ -1,8 +1,9 @@
 const { test, expect } = require('@playwright/test');
+const { URLs } = require('../Common/Urls');
 
-test.only('XPath Playwright Locators', async ({ page }) => {
+test('XPath Playwright Locators', async ({ page }) => {
 // Navigate to the Testing101 website
-await page.goto('https://www.testing101.net/playwrightlocators');
+await page.goto(URLs.pageLinkPlaywrightLocators);
 await page.waitForTimeout(5000);
 //Click on the Consent button on Cookie pop-up
 await page.getByLabel('Consent', { exact: true }).click();

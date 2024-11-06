@@ -1,8 +1,9 @@
 const { test, expect } = require('@playwright/test');
+const { URLs } = require('../Common/Urls');
 
 test('Add a new Address in My Account', async ({ page }) => {
 // Navigate to the Testing101 website
-await page.goto('https://www.testing101.net/');
+await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
 //Click on the Consent button on Cookie pop-up
 await page.getByLabel('Consent', { exact: true }).click();

@@ -1,8 +1,9 @@
 const { test, expect } = require('@playwright/test');
+const { URLs } = require('../Common/Urls');
 
 test('Login with valid credentials', async ({ page }) => {
 // Navigate to the Testing101 website
-await page.goto('https://www.testing101.net/');
+await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
 //Click on the Consent button on Cookie pop-up
 await page.getByLabel('Consent', { exact: true }).click();
@@ -24,7 +25,7 @@ await expect(page.getByLabel('andriitest7799 account menu')).toBeVisible();
 
 test('Login with empty fields of the Login form', async ({ page }) => {
 // Navigate to the Testing101 website
-await page.goto('https://www.testing101.net/');
+await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
 //Click on the Consent button on Cookie pop-up
 await page.getByLabel('Consent', { exact: true }).click();
@@ -44,7 +45,7 @@ await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_C
 
 test('Login with empty Email field of the Login form', async ({ page }) => {
 // Navigate to the Testing101 website
-await page.goto('https://www.testing101.net/');
+await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
 //Click on the Consent button on Cookie pop-up
 await page.getByLabel('Consent', { exact: true }).click();
@@ -64,7 +65,7 @@ await expect(page.locator('#siteMembersInputErrorMessage_emailInput_SM_ROOT_COMP
 
 test('Login with empty Password field of the Login form', async ({ page }) => {
 // Navigate to the Testing101 website
-await page.goto('https://www.testing101.net/');
+await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
 //Click on the Consent button on Cookie pop-up
 await page.getByLabel('Consent', { exact: true }).click();
@@ -84,7 +85,7 @@ await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_C
 
 test('Log in with the Invalid format of Email', async ({ page }) => {
 // Navigate to the Testing101 website
-await page.goto('https://www.testing101.net/');
+await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
 //Click on the Consent button on Cookie pop-up
 await page.getByLabel('Consent', { exact: true }).click();
@@ -106,7 +107,7 @@ await expect(page.locator('#siteMembersInputErrorMessage_emailInput_SM_ROOT_COMP
 
 test('Log in with the Invalid Password', async ({ page }) => {
 // Navigate to the Testing101 website
-await page.goto('https://www.testing101.net/');
+await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
 //Click on the Consent button on Cookie pop-up
 await page.getByLabel('Consent', { exact: true }).click();
@@ -128,7 +129,7 @@ await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_C
 
 test('Log in with a non-existent user email', async ({ page }) => {
 // Navigate to the Testing101 website
-await page.goto('https://www.testing101.net/');
+await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
 //Click on the Consent button on Cookie pop-up
 await page.getByLabel('Consent', { exact: true }).click();
