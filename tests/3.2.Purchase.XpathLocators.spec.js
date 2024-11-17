@@ -1,15 +1,14 @@
 import {test,expect} from '@playwright/test';
 import { URLs } from '../Common/Urls';
+import {consentPopup} from '../Common/ConsentPopup';
 
 test.only('End to End Purchase flow with the XPath locators', async ({ page }) => {
   test.setTimeout(50000);
 // Navigate to the Testing101 website
 await page.goto(URLs.pageLinkCategoryAllProducts);
 await page.waitForTimeout(5000);
-
-//Click on the Consent button on Cookie pop-up
-const buttonConsent = page.locator("xpath=//button[@aria-label='Consent']");
-await buttonConsent.click();
+const consentPopupWindow = new consentPopup(page);
+await consentPopupWindow.clickManageOptions();
 //Click on the Sorting option of the Filter tab
 const buttonSorting = page.locator("xpath=//span[text()='Sorting']");
 await buttonSorting.click();
