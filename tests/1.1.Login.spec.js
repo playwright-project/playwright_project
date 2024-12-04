@@ -37,9 +37,9 @@ await page.getByTestId('signUp.switchToSignUp').click();
 await page.getByTestId('buttonElement').click();
 
 //Assertion to check error message of the Email field
-await expect(page.locator('#siteMembersInputErrorMessage_emailInput_SM_ROOT_COMP788')).toHaveText('Email cannot be blank');
+await expect(page.locator('#siteMembersInputErrorMessage_emailInput_SM_ROOT_COMP792')).toHaveText('Email cannot be blank');
 //Assertion to check error message of the Password field
-await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_COMP788')).toHaveText('Make sure you enter a password.');
+await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_COMP792')).toHaveText('Make sure you enter a password.');
 });
 
 
@@ -59,7 +59,7 @@ await page.getByLabel('Password').fill('Aa123_123');
 await page.getByTestId('buttonElement').click();
 
 //Assertion to check error message of the Email field
-await expect(page.locator('#siteMembersInputErrorMessage_emailInput_SM_ROOT_COMP788')).toHaveText('Email cannot be blank');
+await expect(page.locator('#siteMembersInputErrorMessage_emailInput_SM_ROOT_COMP792')).toHaveText('Email cannot be blank');
 });
 
 
@@ -79,7 +79,7 @@ await page.getByLabel('Email').fill('andriitest7799@gmail.com');
 await page.getByTestId('buttonElement').click();
 
 //Assertion to check error message of the Password field
-await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_COMP788')).toHaveText('Make sure you enter a password.');
+await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_COMP792')).toHaveText('Make sure you enter a password.');
 });
 
 
@@ -101,7 +101,7 @@ await page.getByLabel('Password').fill('Aa123_123');
 await page.getByTestId('buttonElement').click();
 
 // //Assertion to check error message of the Email field
-await expect(page.locator('#siteMembersInputErrorMessage_emailInput_SM_ROOT_COMP788')).toHaveText('Double check your email and try again.');
+await expect(page.locator('#siteMembersInputErrorMessage_emailInput_SM_ROOT_COMP792')).toHaveText('Double check your email and try again.');
 });
 
 
@@ -123,7 +123,7 @@ await page.getByLabel('Password').fill('Aa123_1');
 await page.getByTestId('buttonElement').click();
 
 // //Assertion to check error message of the Password field
-await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_COMP788')).toHaveText('Wrong email or password');
+await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_COMP792')).toHaveText('Wrong email or password');
 });
 
 
@@ -145,5 +145,5 @@ await page.getByLabel('Password').fill('Aa123_123');
 await page.getByTestId('buttonElement').click();
 
 // //Assertion to check a non-existent user email error message
-await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_COMP788')).toHaveText("This email doesn't match any account. Try again.");
+await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_COMP792')).toHaveText("This email doesn't match any account. Try again.");
 });
