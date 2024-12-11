@@ -4,6 +4,7 @@ import {consentPopup} from '../Common/ConsentPopup';
 import { pagePLP } from '../PageObjects/PagePLP';
 import { pageCartPage } from '../PageObjects/PageCartPage';
 import { pageCheckout } from '../PageObjects/PageCheckout';
+import { testData } from '../Common/TestData';
 
 test.only('End to End Purchase flow with the XPath locators', async ({ page }) => {
   test.setTimeout(50000);
@@ -37,23 +38,23 @@ await buttonCheckout.click();
 //Checkout step 1
 const checkoutPage = new pageCheckout(page);
 const fieldEmail = page.locator(checkoutPage.fieldEmail);
-await fieldEmail.fill('test@example.com');
+await fieldEmail.fill(testData.checkoutCustomerDetails.email);
 const fieldFirstName = page.locator(checkoutPage.fieldFirstName);
-await fieldFirstName.fill('Testing');
+await fieldFirstName.fill(testData.checkoutCustomerDetails.firstName);
 const fieldLastName = page.locator(checkoutPage.fieldLastName);
-await fieldLastName.fill('101');
+await fieldLastName.fill(testData.checkoutCustomerDetails.lastName);
 const fieldPhone = page.locator(checkoutPage.fieldPhone);
-await fieldPhone.fill('123-456-7890');
+await fieldPhone.fill(testData.checkoutCustomerDetails.phone);
 const dropdownCountryRegion = page.locator(checkoutPage.dropdownCountryRegion);
 await dropdownCountryRegion.click();
 const dropdownOption = page.locator(checkoutPage.dropdownOption);
 await dropdownOption.click();
 const fieldAddress = page.locator(checkoutPage.fieldAddress);
-await fieldAddress.fill('1234 Example Street');
+await fieldAddress.fill(testData.checkoutDeliveryDetails.address);
 const fieldCity = page.locator(checkoutPage.fieldCity);
-await fieldCity.fill('Lviv');
+await fieldCity.fill(testData.checkoutDeliveryDetails.city);
 const fieldZipCode = page.locator(checkoutPage.fieldZipCode);
-await fieldZipCode.fill('12345');
+await fieldZipCode.fill(testData.checkoutDeliveryDetails.zipCode);
 const buttonContinueCheckout1 = page.locator(checkoutPage.buttonContinueCheckout1);
 await buttonContinueCheckout1.click();
 //Checkout step 2
