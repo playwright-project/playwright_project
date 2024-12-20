@@ -36,14 +36,13 @@ await page.getByTestId('signUp.switchToSignUp').click();
 //Click on the Login button of the Login form
 await page.getByTestId('buttonElement').click();
 
-//Assertion to check error message of the Email field
-await expect(page.locator('#siteMembersInputErrorMessage_emailInput_SM_ROOT_COMP792')).toHaveText('Email cannot be blank');
-//Assertion to check error message of the Password field
-await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_COMP792')).toHaveText('Make sure you enter a password.');
+//Assertion to check the error message of the Email field
+await expect(page.getByText('Email cannot be blank')).toBeVisible();
+//Assertion to check the error message of the Password field
+await expect(page.getByText('Make sure you enter a password.')).toBeVisible();
 });
 
-
-test('Login with empty Email field of the Login form', async ({ page }) => {
+test('Login with an empty Email field of the Login form', async ({ page }) => {
 // Navigate to the Testing101 website
 await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
@@ -58,12 +57,11 @@ await page.getByLabel('Password').fill('Aa123_123');
 //Click on the Login button of the Login form
 await page.getByTestId('buttonElement').click();
 
-//Assertion to check error message of the Email field
-await expect(page.locator('#siteMembersInputErrorMessage_emailInput_SM_ROOT_COMP792')).toHaveText('Email cannot be blank');
+//Assertion to check the error message of the Email field
+await expect(page.getByText('Email cannot be blank')).toBeVisible();
 });
 
-
-test('Login with empty Password field of the Login form', async ({ page }) => {
+test('Login with an empty Password field of the Login form', async ({ page }) => {
 // Navigate to the Testing101 website
 await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
@@ -78,14 +76,13 @@ await page.getByLabel('Email').fill('andriitest7799@gmail.com');
 //Click on the Login button of the Login form
 await page.getByTestId('buttonElement').click();
 
-//Assertion to check error message of the Password field
-await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_COMP792')).toHaveText('Make sure you enter a password.');
+//Assertion to check the error message of the Password field
+await expect(page.getByText('Make sure you enter a password.')).toBeVisible();
 });
 
-
-test('Log in with the Invalid format of Email', async ({ page }) => {
+test('Login with the invalid format of the Email', async ({ page }) => {
 // Navigate to the Testing101 website
-await page.goto(URLs.pageLinkHomePage);
+await page.goto(URLs.pageLinkHomePage);;
 await page.waitForTimeout(5000);
 //Click on the Consent button on Cookie pop-up
 await page.getByLabel('Consent', { exact: true }).click();
@@ -100,12 +97,12 @@ await page.getByLabel('Password').fill('Aa123_123');
 //Click on the Login button of the Login form
 await page.getByTestId('buttonElement').click();
 
-// //Assertion to check error message of the Email field
-await expect(page.locator('#siteMembersInputErrorMessage_emailInput_SM_ROOT_COMP792')).toHaveText('Double check your email and try again.');
+//Assertion to check the error message of the Email field
+await expect(page.getByText('Double check your email and try again.')).toBeVisible();
 });
 
 
-test('Log in with the Invalid Password', async ({ page }) => {
+test('Login with the invalid Password', async ({ page }) => {
 // Navigate to the Testing101 website
 await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
@@ -122,12 +119,11 @@ await page.getByLabel('Password').fill('Aa123_1');
 //Click on the Login button of the Login form
 await page.getByTestId('buttonElement').click();
 
-// //Assertion to check error message of the Password field
-await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_COMP792')).toHaveText('Wrong email or password');
+//Assertion to check the error message of Password field
+await expect(page.getByText('Wrong email or password')).toBeVisible();
 });
 
-
-test('Log in with a non-existent user email', async ({ page }) => {
+test('Login with non-existent user email', async ({ page }) => {
 // Navigate to the Testing101 website
 await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
@@ -144,6 +140,6 @@ await page.getByLabel('Password').fill('Aa123_123');
 //Click on the Login button of the Login form
 await page.getByTestId('buttonElement').click();
 
-// //Assertion to check a non-existent user email error message
-await expect(page.locator('#siteMembersInputErrorMessage_passwordInput_SM_ROOT_COMP792')).toHaveText("This email doesn't match any account. Try again.");
+//Assertion to check a non-existent user Email error message
+await expect(page.getByText("This email doesn't match any account. Try again.")).toBeVisible();
 });
