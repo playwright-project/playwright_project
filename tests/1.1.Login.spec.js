@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 const { URLs } = require('../Common/Urls');
 
 test('Login with valid credentials', async ({ page }) => {
-  // Navigate to the Testing101 website
+       // Navigate to the Testing101 website
 await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
 //Click on the Consent button on Cookie pop-up
