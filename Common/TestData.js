@@ -15,6 +15,14 @@ city: 'Lviv',
 zipCode: '12345'
 }
 
+static userLogin = {
+emailValid:'andriitest7799@gmail.com',
+passwordValid:'Aa123_123',
+emailInvalidFormat: 'andriitest7799%gmail.com',
+passwordInvalid:'Aa123_1',
+emailUnexistent: 'andriitest12345@gmail.com'
+}
+
 }
 
 
