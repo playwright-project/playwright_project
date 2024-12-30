@@ -5,7 +5,7 @@ import { pageLogin } from '../PageObjects/PageLogin';
 import { pageSignUp } from '../PageObjects/PageSignup';
 import { testData } from '../Common/TestData';
 
-test.only('Login with valid credentials', async ({ page }) => {
+test('Login with valid credentials', async ({ page }) => {
     await page.goto(URLs.pageLinkHomePage)
     await page.waitForTimeout(5000);
     const consentPopupWindow = new consentPopup(page);

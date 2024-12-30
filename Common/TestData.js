@@ -1,14 +1,15 @@
 export class testData {
 //Define date here 
-static checkoutCustomerDetails =
+static CustomerDetails =
 {
 email: 'test@example.com',
 firstName:'Testing',
 lastName: '101',
-phone: '123-456-7890'
+phone: '123-456-7890',
+compamyName:'testing101'
 }
 
-static checkoutDeliveryDetails =
+static DeliveryDetails =
 {
 address:'1234 Example Street',
 city: 'Lviv',
