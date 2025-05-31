@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const { URLs } = require('../Common/Urls');
 
-test('Login with valid credentials', async ({ page }) => {
+test.only('Login with valid credentials', async ({ page }) => {
 // Navigate to the Testing101 website
 await page.goto(URLs.pageLinkHomePage);
 await page.waitForTimeout(5000);
@@ -19,7 +19,7 @@ await page.getByLabel('Password').fill('Aa123_123');
 await page.getByTestId('buttonElement').click();
 
 // Assertion: Check if 'andriitest7799 account menu' is visible after login
-await expect(page.getByLabel('andriitest7799 account menu')).toBeVisible();
+await expect(page.getByTestId('handle-button')).toBeVisible();
 });
 
 

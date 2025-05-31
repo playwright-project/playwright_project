@@ -14,8 +14,9 @@ await page.getByRole('link', { name: 'Sorting' }).click();
 await page.waitForTimeout(5000);
 //Click on the Add To Cart button on the Americano product
 await page.getByLabel('Americano gallery').getByLabel('Add to Cart').click();
+await page.pause();
 //Click on the View Cart button on the Cart sidebar
-await page.frameLocator('xpath=/html/body/div[1]/div/div[4]/iframe').getByRole('link', { name: 'View Cart' }).click();
+await page.getByRole('button', { name: 'View Cart' }).click();
 //Cart Assertion
 await expect(page.locator('h3[data-hook="EmptyState.title"]')).not.toBeVisible();
 //Click on the Checkout button on the My Cart page
